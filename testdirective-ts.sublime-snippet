@@ -1,0 +1,39 @@
+<snippet>
+  <content><![CDATA[
+describe('Directive: ${10:directiveName}', () => {
+  
+  let createElement, el, scope, markup, vm;
+
+  beforeEach(module('${15:webApp}'));
+
+  beforeEach(inject(function(\$injector) {
+    
+    let \$rootScope = \$injector.get('\$rootScope');
+    let \$compile = \$injector.get('\$compile');
+    
+    scope = \$rootScope.\$new();
+    markup = '<div ${20:directive-name}$30></div>';
+
+    createElement = function() {
+      el = angular.element(markup);
+      \$compile(el)(scope);
+      \$rootScope.\$digest();
+    };
+
+  }));
+
+  it('should compile', () => {
+    expect(createElement).not.toThrow();
+  });
+
+  it$0
+
+
+});
+
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>testdirective</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.ts</scope>
+</snippet>
